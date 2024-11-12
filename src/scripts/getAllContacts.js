@@ -10,4 +10,8 @@ export const getAllContacts = async () => {
   }
 };
 
-getAllContacts();
+const runGetAllContacts = async () => {
+  await getAllContacts();
+};
+
+runGetAllContacts();

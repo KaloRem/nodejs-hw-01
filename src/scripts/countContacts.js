@@ -10,4 +10,8 @@ export const countContacts = async () => {
   }
 };
 
-console.log(await countContacts());
+const runCountContacts = async () => {
+  console.log(await countContacts());
+};
+
+runCountContacts();

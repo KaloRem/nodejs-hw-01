@@ -1,11 +1,15 @@
 import fs from 'fs';
 import { PATH_DB } from '../constants/contacts.js';
 
-const writeContacts = (contacts) => {
+const writeContacts = async (contacts) => {
   try {
-    fs.writeFileSync(PATH_DB, JSON.stringify(contacts, null, 2), 'utf-8');
+    await fs.promises.writeFile(
+      PATH_DB,
+      JSON.stringify(contacts, null, 2),
+      'utf-8',
+    );
   } catch (error) {
-    console.error('Error writing contacts:', error);
+    console.error('Помилка при записі контактів:', error.message);
   }
 };
 
